@@ -1,0 +1,10 @@
+file,column,type,description
+passages_clean.csv,id,string,Stable row id <prompt_id>__<model>__a<attempt> (pilot_range rows: <prompt_id>__<model>__range_a<attempt>); never renumbered across dataset versions.
+passages_clean.csv,prompt_id,string,Prompt id (join key to prompts.csv and blocks.csv). n### = new prompt; tr_p### = regeneration of a reconstructed competition train prompt; v1_g### = prompt_bank_v1 re-issue.
+passages_clean.csv,model,string,The competition label of the model that wrote the passage (one of the 18 Name That LLM labels).
+passages_clean.csv,text,string,"The passage exactly as returned by the API (no cleaning, no truncation)."
+passages_clean.csv,n_words,integer,Whitespace word count of `text`.
+passages_clean.csv,target_words,integer,Per-generation target length N sent as '(about N words)' (length_mode target); empty when the prompt carried a shared range '(words min-max)'.
+passages_clean.csv,split,string,"new (prompts written for this dataset), new2 (prompts written in the register of the reconstructed competition prompts), train_regen (reconstructed competition train prompts), new_kimi_nothink (kimi-k3 re-run on `new` with reasoning disabled), proxy_v1 (Kaggle-proxy rows on earlier prompts), pilot_range (pilot rows with the shared length range)."
+passages_clean.csv,provider_route,string,"Route that produced the row: anthropic (first-party API), openai (first-party API), openrouter (first-party provider pinned), vertex (Google Vertex AI), kaggle_proxy (Kaggle Benchmarks Model Proxy)."
+passages_clean.csv,source_prompt_id,string,For train_regen: the competition prompt_id (join to the competition's train.csv inside a Kaggle notebook); for v1_regen: the prompt_bank_v1 id.

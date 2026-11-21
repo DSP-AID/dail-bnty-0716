@@ -1,0 +1,156 @@
+{
+  "arm_under_test": "V8-TRACE (rank-transition features) vs V7-control",
+  "bounty": "DAiL bnty_0716 - V8 arm bounty (TRACE rank-transition features)",
+  "config": {
+    "bootstrap_draws": 400,
+    "damping_alpha": 0.15,
+    "n_splits": 2,
+    "reps": 5,
+    "seed": 0,
+    "subsample": 0.8
+  },
+  "data_file": "data/passages_clean.csv.gz",
+  "data_sha256": "3b3097a6f565b385e3de88dac7f48cb32668d35ea8f0e03a81e9f5b224f7d9ae",
+  "environment": {
+    "blas_threads": "1",
+    "numpy": "2.5.4",
+    "pandas": "3.1.1",
+    "platform": "Windows-2022Server-10.0.26100-SP0",
+    "python": "3.12.8",
+    "scikit_learn": "1.9.1"
+  },
+  "gate0_data": {
+    "classes": 18,
+    "group_size_max": 18,
+    "group_size_min": 12,
+    "group_size_mode": [
+      [
+        12,
+        43
+      ],
+      [
+        18,
+        253
+      ]
+    ],
+    "per_class_max": 296,
+    "per_class_min": 253,
+    "prompt_groups": 296,
+    "rows": 5070,
+    "trace_feature_columns": 30
+  },
+  "gate1_folds": {
+    "groups_in_folds": 296,
+    "max_groups_shared_between_train_and_val": 0,
+    "n_splits": 2,
+    "rows_covered_by_oof": 5070,
+    "rows_total": 5070
+  },
+  "gate2_primary_k2": {
+    "arm": {
+      "balanced_accuracy": 0.3012721219242958,
+      "log_loss": 2.12579426499164,
+      "macro_f1": 0.2888101244897474,
+      "seconds": 228.86
+    },
+    "control": {
+      "balanced_accuracy": 0.27859603674821065,
+      "log_loss": 2.2295631419572914,
+      "macro_f1": 0.26280532468959567,
+      "seconds": 228.85
+    },
+    "delta_balanced_accuracy": 0.02267608517608516,
+    "delta_log_loss": -0.10376887696565129,
+    "delta_macro_f1": 0.026004799800151746,
+    "n_splits": 2,
+    "per_fold_arm_ba": [
+      0.30324371991038657,
+      0.299283535504008
+    ],
+    "per_fold_control_ba": [
+      0.28724557891224556,
+      0.2699569648388546
+    ],
+    "subsample": 1.0
+  },
+  "gate3_subsampled": {
+    "n_splits": 2,
+    "runs": [
+      {
+        "arm_ba": 0.2858994512010148,
+        "control_ba": 0.27477524061664044,
+        "delta_balanced_accuracy": 0.01112421058437435,
+        "groups_used": 237,
+        "seed": 1
+      },
+      {
+        "arm_ba": 0.2913291139240506,
+        "control_ba": 0.27736990154711677,
+        "delta_balanced_accuracy": 0.013959212376933816,
+        "groups_used": 237,
+        "seed": 2
+      },
+      {
+        "arm_ba": 0.29223762641484163,
+        "control_ba": 0.28268367825329854,
+        "delta_balanced_accuracy": 0.009553948161543091,
+        "groups_used": 237,
+        "seed": 3
+      },
+      {
+        "arm_ba": 0.2881727209531662,
+        "control_ba": 0.2708609026810686,
+        "delta_balanced_accuracy": 0.0173118182720976,
+        "groups_used": 237,
+        "seed": 4
+      },
+      {
+        "arm_ba": 0.28930436328952264,
+        "control_ba": 0.2748101034875369,
+        "delta_balanced_accuracy": 0.01449425980198571,
+        "groups_used": 237,
+        "seed": 5
+      }
+    ],
+    "subsample": 0.8,
+    "summary": {
+      "max_delta": 0.0173118182720976,
+      "mean_delta": 0.013288689839386914,
+      "min_delta": 0.009553948161543091,
+      "n_runs": 5,
+      "positive_runs": 5,
+      "std_delta": 0.003029926881946468
+    }
+  },
+  "gate4_bootstrap": {
+    "ci95_high": 0.03258918433644414,
+    "ci95_low": 0.012005850161650882,
+    "mean_delta": 0.021963602856727535,
+    "n_boot": 400,
+    "share_positive": 1.0
+  },
+  "gate5_damped_calibration": {
+    "alpha": 0.15,
+    "delta_balanced_accuracy": 0.0,
+    "delta_log_loss": -0.01347213676885417,
+    "log_loss_after": 2.2160910051884373,
+    "log_loss_before": 2.2295631419572914
+  },
+  "gate6_trace_unscaled": {
+    "balanced_accuracy": 0.30721803819629906,
+    "delta_balanced_vs_control": 0.028622001448088408,
+    "log_loss": 2.1175545165987226,
+    "per_fold_ba": [
+      0.31202631202631204,
+      0.3024136341065475
+    ],
+    "seconds": 495.7
+  },
+  "runtime_seconds": 1609.7,
+  "verdict": {
+    "delta_balanced_accuracy": 0.02267608517608516,
+    "gate_ci_low": 0.012005850161650882,
+    "pass": true,
+    "positive_share": 1.0
+  }
+}
