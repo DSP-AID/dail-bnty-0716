@@ -94,6 +94,9 @@ same pinned libraries) reproduces the primary gate exactly — [`evidence/linux_
   (it cannot move balanced accuracy by construction — an increasing row-wise map — so it only moves log-loss).
 * Provider API terms restrict using AI outputs to train competing commercial models; this is a verification
   harness on an explicitly CC BY 4.0 research dataset. Check the dataset card before commercial reuse.
+* Cross-platform drift is real but tiny: on Ubuntu the primary gate reproduces exactly, while one of five
+  subsampled stability runs moved by 0.00023 (last-bit lbfgs reductions) and log-loss differs at 1e-8. The
+  verdict is `PASS` on both systems - [`evidence/linux_rerun.md`](evidence/linux_rerun.md).
 
 ## Repo map
 
