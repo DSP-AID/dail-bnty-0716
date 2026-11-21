@@ -1,4 +1,4 @@
-# Measured on: Python 3.12.8 (Windows), the environment that produced the shipped evidence.
+# Measured on: Python 3.12.8 (Windows) and 3.12.3 (Ubuntu 24.04); see evidence/linux_rerun.md.
 # Pinned so a re-run reproduces
 # the shipped evidence bit for bit; nearby versions run fine but may shift the last digits.
 numpy==2.5.4

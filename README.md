@@ -71,7 +71,8 @@ PY
 Measured on Python 3.12.8 / numpy 2.5.4 / pandas 3.1.1 / scipy 1.18.1 / scikit-learn 1.9.1 with BLAS pinned
 to one thread (`OMP_NUM_THREADS=1` in `run_oof.py`). Seeds fixed everywhere. Two independent code paths —
 `run_oof.py` (per-arm fitting) and the notebook (shared fitting) — produced identical metrics digit for
-digit; only the wall-clock seconds differ.
+digit; only the wall-clock seconds differ. The same repo re-run unmodified on Ubuntu 24.04 (Python 3.12.3,
+same pinned libraries) reproduces the primary gate exactly — [`evidence/linux_rerun.md`](evidence/linux_rerun.md).
 
 ## Honest limits
 
